@@ -1,0 +1,9 @@
+datasets/
+.idea/
+__pycache__/
+*.pyc
+*.pyo
+.env/
+.venv/
+.venv*/
+notebooks/workload_runs
