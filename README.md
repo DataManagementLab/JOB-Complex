@@ -4,7 +4,7 @@ Sourcecode of our AIDB '25 paper "JOB-Complex: A Challenging Benchmark for
 Traditional & Learned Query Optimization"
 
 <p align="center">
-  <img src="graphics/optimization_gap.jpg" width="50%">
+  <img src="graphics/optimization_gap_annotated.jpg" width="50%">
 </p>
 
 ## Abstract
