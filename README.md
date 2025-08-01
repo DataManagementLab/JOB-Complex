@@ -8,13 +8,12 @@ Traditional & Learned Query Optimization"
 </p>
 
 ## Abstract
-Query optimization is a fundamental task in database systems that is crucial to providing high performance.
-%In recent years, traditional and learned query optimizers and cost models successfully demonstrated near-optimal performance over standard benchmarks, like JOB or JOB-Light.
-To exercise learned and traditional optimizer's performance, several benchmarks, such as the widely used JOB benchmark, are used.
-However, in this paper, we argue that existing benchmarks are inherently limited, as they do not reflect many real-world properties of query optimization, thus overstating the performance of both traditional and learned optimizers.
-In fact, simple but realistic properties, such as joins over string columns or complex filter predicates, can drastically reduce the performance of existing query optimizers.
-Thus, we introduce **JOB-Complex**, a new benchmark designed to challenge traditional and learned query optimizers by reflecting real-world complexity.
-Overall, JOB-Complex contains 30 SQL queries and comes together with a plan-selection benchmark containing nearly 6000 picked execution plans, making it a valuable resource to evaluate the performance of query optimizers and cost models in real-world scenarios.
+Query optimization is a fundamental task in database systems that is crucial to providing high performance. 
+To evaluate learned and traditional optimizer's performance, several benchmarks, such as the widely used JOB benchmark, are used. 
+However, in this paper, we argue that existing benchmarks are inherently limited, as they do not reflect many real-world properties of query optimization, thus overstating the performance of both traditional and learned optimizers. 
+In fact, simple but realistic properties, such as joins over string columns or complex filter predicates, can drastically reduce the performance of existing query optimizers. 
+Thus, we introduce **JOB-Complex**, a new benchmark designed to challenge traditional and learned query optimizers by reflecting real-world complexity. 
+Overall, JOB-Complex contains 30 SQL queries and comes together with a plan-selection benchmark containing nearly 6000 execution plans, making it a valuable resource to evaluate the performance of query optimizers and cost models in real-world scenarios. 
 In our evaluation, we show that traditional and learned cost models struggle to achieve high performance on JOB-Complex, providing a runtime of up to 11x slower compared to the optimal plans.
 
 ## Citation
@@ -22,7 +21,13 @@ In our evaluation, we show that traditional and learned cost models struggle to 
 Please cite our paper if you find this work useful or use it in your own research:
 
 ```
-TODO
+@inproceedings{wehrstein2025jobcomplex,
+  title={JOB-Complex: A Challenging Benchmark for Traditional \& Learned Query Optimization},
+  author={Wehrstein, Johannes and Eckmann, Timo and Heinrich, Roman and Binnig, Carsten},
+  year      = {2025},
+  note      = {AIDB Co-located with VLDB 2025},
+  url       = {https://aidb-workshop.github.io/2025/},
+}
 ```
 
 # JOB-Complex
@@ -42,7 +47,7 @@ To address this gap, JOB-Complex offers a novel and hard benchmark.
     - Joins on non-primary/foreign key columns
     - Joins on string columns
     - Complex filter predicates
-- It provides multiple execution plans for each query (5131 total), including physical plans with estimated/actual costs and cardinalities. This is crucial for learned approaches.
+- It provides multiple execution plans for each query (~6000 in total), including physical plans with estimated/actual costs and cardinalities. This is crucial for learned approaches.
 - JOB-Complex demonstrates how relatively simple modifications to the well-known JOB-benchmark can create a significantly more challenging and realistic benchmark.
 - It shows an optimization gap of up to **11.13x** with PostgreSQL and **9.68x** with the learned Zero-Shot model, significantly higher than JOB (1.99x) and JOB-light (1.18x).
 
@@ -75,7 +80,7 @@ AND ... -- (other join conditions)
 
 ## Contributions
 1. We introduce **JOB-Complex**, a novel benchmark for query optimization and cost estimation that incorporates real-world challenges such as joins on non-primary/foreign key columns, joins on string columns, and complex filter predicates.
-2. We make **JOB-Complex** publicly available (TODO: Add GitHub link here) to foster future research and development in query optimization, encouraging the community to address these identified challenges.
+2. We make **JOB-Complex** publicly available ([github](https://github.com/DataManagementLab/JOB-Complex/) to foster future research and development in query optimization, encouraging the community to address these identified challenges.
 
 # Download Plan-Selection Dataset
 You can download the plan selection datasets for JOB-Complex, JOB and JOB-light from [here](https://osf.io/53de6/?view_only=f304ebe762f34f65a3ce591340b89818).
